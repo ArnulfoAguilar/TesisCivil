@@ -55,6 +55,14 @@ namespace JHICalAcero
         float ldh = 0.0f;
         float diametro = 0.0f;
         float WR = 0.0f;
+        float B = 0.0f;
+        float H = 0.0f;
+        float rec = 0.0f;
+        float Diametro2 = 0.0f;
+        float Lm = 0.0f;
+        float L = 0.0f;
+        float C = 0.0f;
+        string posicionGrapa ="";
         #endregion
         public Resultado()
         {
@@ -156,19 +164,37 @@ namespace JHICalAcero
                         lambda = float.Parse(lector.GetString(13));
                         lrect = float.Parse(lector.GetString(17));
                         imagen = lector.GetString(18);
-                        if (solicitacion != "Compresion")
+                        if (imagen == "Ganchos/AT90.png" || imagen == "Ganchos/AT135.png" || imagen == "Ganchos/AT180.png" || imagen == "Ganchos/ATC135.png" || imagen == "Ganchos/DBE135.png" || imagen == "Ganchos/GRAPA.png")
+                        {
+                            B= float.Parse(lector.GetString(20));
+                            H= float.Parse(lector.GetString(23));
+                            rec = float.Parse(lector.GetString(22));
+                            Diametro2 = float.Parse(lector.GetString(21));
+
+                        }
+                        else if (solicitacion != "Compresion")
                         {
                             cb = float.Parse(lector.GetString(11));
                             Ktr = float.Parse(lector.GetString(12));
                             ew = float.Parse(lector.GetString(14));
                             s = float.Parse(lector.GetString(15));
                             t = float.Parse(lector.GetString(16));
-                        }
-                        if (solicitacion != "Tension")
+                        }else
                         {
                             WR = float.Parse(lector.GetString(19));
                         }
-                        
+                        if (imagen == "Ganchos/ALC90.png" || imagen == "Ganchos/ALC135.png" || imagen == "Ganchos/ALC180.png" || imagen == "Ganchos/VGD90.png")
+                        {
+                            Lm = float.Parse(lector.GetString(26));
+                        }
+                        if (imagen == "Ganchos/ALRC.png")
+                        {
+                            C = float.Parse(lector.GetString(27));
+                        }
+                        if (imagen == "Ganchos/GRAPA.png")
+                        {
+                            posicionGrapa = lector.GetString(25);
+                        }
                     }
                     lector.Close();
                     connection.Close();
@@ -188,7 +214,36 @@ namespace JHICalAcero
         }
         private void comprobarEstadoVarillas()
         {
-            if (clave == "ALR")
+            if (imagen == "Ganchos/AT90.png" || imagen == "Ganchos/AT135.png" || imagen == "Ganchos/AT180.png" || imagen == "Ganchos/ATC135.png" || imagen == "Ganchos/DBE135.png" || imagen == "Ganchos/GRAPA.png")
+            {
+                CalcularAceroTransversalNuevo();
+            }
+            else if (imagen == "Ganchos/ALC90.png" || imagen == "Ganchos/ALC135.png" || imagen == "Ganchos/ALC180.png")
+            {
+                /*•	Para ALC90, ALC135 Y ALC180
+                “Lm” (OTRO CAMPO) será digitada y no calculada, por lo tanto, 
+                debe solicitarse su valor al inicio. “Ldh” y “Lext” se mantiene
+                según su fórmula correspondiente.
+                */
+                calcularldhGanchoAcero();
+                calcularLextGanchoLongitudinal();
+                calcularLongitudRectaGancho();
+            }
+            else if (imagen == "Ganchos/VGD90.png")
+            {
+                /*•	Para VGD90
+                    “Lm” será digitada y no calculada, por lo tanto, 
+                    debe solicitarse su valor al inicio. “Ldh” y “Lext” 
+                    se mantiene según su fórmula correspondiente, con la 
+                     diferencia, que ambas (Ldh y Lext) deben multiplicarse por 2.
+                */
+                calcularldhGanchoAcero();
+                calcularLextGanchoTransversal();
+                lext = lext * 2;
+                calcularLongitudRectaGancho();
+                ldh = ldh * 2;
+            }
+            else if (imagen == "Ganchos/ALR.png" || imagen == "Ganchos/ALRC.png")
             {
                 if (solicitacion == "Compresion")
                 {
@@ -203,7 +258,67 @@ namespace JHICalAcero
             {
                 calculoGanchoAcero();
             }
+        }
+        private void CalcularAceroTransversalNuevo()
+        {
+            //SE CALCULA LEXT
+            if (clave == "AT90")
+            {
+                if (varilla == "#3" || varilla == "#4" || varilla == "#5")
+                {
+                    float sextuple = diametro * 6f;
+                    lext = (sextuple > 7.5) ? sextuple : 7.5f;
+                }
+                else if (varilla == "#6" || varilla == "#7" || varilla == "#8")
+                {
+                    lext = 12f * diametro;
+                }
+                else
+                {
+                    MessageBox.Show("No se tiene un valor Lext para este tipo de varilla");
+                }
+            }
+            else if (clave == "AT135")
+            {
+                float sextuple = diametro * 6.0f;
+                lext = (sextuple > 7.5f) ? sextuple : 7.5f;
+            }
+            else
+            {
+                float cuadruple = diametro * 4;
+                lext = (cuadruple > 6.5f) ? cuadruple : 6.5f;
+            }
+            lext = lext * 2;
 
+            //SE CALCULA LEXT
+            if (imagen == "Ganchos/AT90.png" || imagen == "Ganchos/AT135.png" || imagen == "Ganchos/AT180.png")
+            {
+                
+                L = 2*(H - 2 * rec - diametro)+2*(B-2*rec-diametro);
+               
+            }
+            else if(imagen == "Ganchos/ATC135.png")
+            {
+                L = float.Parse(Math.PI.ToString()) * (Diametro2 - 2 * rec) + 2 * (B-2*rec-diametro);
+            }else if (imagen == "Ganchos/DBE135.png")
+            {
+                float l1 = (H - 2 * rec - diametro)/2;
+                float l2 = (B-2*rec-diametro)/2;
+                float l3 = float.Parse(Math.Sqrt(Math.Pow(l1, 2) + Math.Pow(l2, 2)).ToString());
+                L = 4 * l3 + lext ;
+            }
+            else
+            {
+                if (posicionGrapa == "Horizontal")
+                {
+                    L = B - 2 * rec - diametro;
+                }
+                else
+                {
+                    L = H - 2 * rec - diametro;
+                }
+
+            }
         }
         private void calculoVarillasRectasCompresion()
         {

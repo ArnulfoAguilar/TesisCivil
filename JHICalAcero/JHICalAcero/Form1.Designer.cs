@@ -75,6 +75,20 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.numB = new System.Windows.Forms.NumericUpDown();
+            this.labelB = new System.Windows.Forms.Label();
+            this.numH = new System.Windows.Forms.NumericUpDown();
+            this.labelH = new System.Windows.Forms.Label();
+            this.numRec = new System.Windows.Forms.NumericUpDown();
+            this.labelRec = new System.Windows.Forms.Label();
+            this.numDiametro = new System.Windows.Forms.NumericUpDown();
+            this.labelDiametro = new System.Windows.Forms.Label();
+            this.txtposicion = new System.Windows.Forms.Label();
+            this.cbGrapa = new System.Windows.Forms.ComboBox();
+            this.numLM = new System.Windows.Forms.NumericUpDown();
+            this.txtLM = new System.Windows.Forms.Label();
+            this.numC = new System.Windows.Forms.NumericUpDown();
+            this.txtC = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -88,6 +102,12 @@
             this.menuStrip1.SuspendLayout();
             this.groupR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRec)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiametro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numC)).BeginInit();
             this.SuspendLayout();
             // 
             // cbElemento
@@ -178,7 +198,7 @@
             "1",
             "1.2",
             "1.5"});
-            this.cbe.Location = new System.Drawing.Point(821, 121);
+            this.cbe.Location = new System.Drawing.Point(1019, 123);
             this.cbe.Margin = new System.Windows.Forms.Padding(2);
             this.cbe.Name = "cbe";
             this.cbe.Size = new System.Drawing.Size(123, 21);
@@ -208,7 +228,7 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Chartreuse;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(1007, 409);
+            this.button1.Location = new System.Drawing.Point(1007, 472);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 35);
             this.button1.TabIndex = 18;
@@ -218,7 +238,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1146, 409);
+            this.button2.Location = new System.Drawing.Point(1146, 472);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 35);
             this.button2.TabIndex = 19;
@@ -318,7 +338,7 @@
             // txtWe
             // 
             this.txtWe.AutoSize = true;
-            this.txtWe.Location = new System.Drawing.Point(818, 106);
+            this.txtWe.Location = new System.Drawing.Point(1016, 108);
             this.txtWe.Name = "txtWe";
             this.txtWe.Size = new System.Drawing.Size(21, 13);
             this.txtWe.TabIndex = 35;
@@ -594,17 +614,164 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 460);
+            this.dataGridView1.Location = new System.Drawing.Point(29, 513);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1207, 206);
+            this.dataGridView1.Size = new System.Drawing.Size(1207, 164);
             this.dataGridView1.TabIndex = 45;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellDoubleClick);
+            // 
+            // numB
+            // 
+            this.numB.Location = new System.Drawing.Point(460, 429);
+            this.numB.Name = "numB";
+            this.numB.Size = new System.Drawing.Size(120, 20);
+            this.numB.TabIndex = 46;
+            this.numB.Visible = false;
+            // 
+            // labelB
+            // 
+            this.labelB.AutoSize = true;
+            this.labelB.Location = new System.Drawing.Point(457, 413);
+            this.labelB.Name = "labelB";
+            this.labelB.Size = new System.Drawing.Size(14, 13);
+            this.labelB.TabIndex = 47;
+            this.labelB.Text = "B";
+            this.labelB.Visible = false;
+            // 
+            // numH
+            // 
+            this.numH.Location = new System.Drawing.Point(642, 429);
+            this.numH.Name = "numH";
+            this.numH.Size = new System.Drawing.Size(120, 20);
+            this.numH.TabIndex = 48;
+            this.numH.Visible = false;
+            // 
+            // labelH
+            // 
+            this.labelH.AutoSize = true;
+            this.labelH.Location = new System.Drawing.Point(639, 413);
+            this.labelH.Name = "labelH";
+            this.labelH.Size = new System.Drawing.Size(15, 13);
+            this.labelH.TabIndex = 49;
+            this.labelH.Text = "H";
+            this.labelH.Visible = false;
+            // 
+            // numRec
+            // 
+            this.numRec.Location = new System.Drawing.Point(837, 429);
+            this.numRec.Name = "numRec";
+            this.numRec.Size = new System.Drawing.Size(120, 20);
+            this.numRec.TabIndex = 50;
+            this.numRec.Visible = false;
+            // 
+            // labelRec
+            // 
+            this.labelRec.AutoSize = true;
+            this.labelRec.Location = new System.Drawing.Point(834, 413);
+            this.labelRec.Name = "labelRec";
+            this.labelRec.Size = new System.Drawing.Size(22, 13);
+            this.labelRec.TabIndex = 51;
+            this.labelRec.Text = "rec";
+            this.labelRec.Visible = false;
+            // 
+            // numDiametro
+            // 
+            this.numDiametro.Location = new System.Drawing.Point(1014, 429);
+            this.numDiametro.Name = "numDiametro";
+            this.numDiametro.Size = new System.Drawing.Size(120, 20);
+            this.numDiametro.TabIndex = 52;
+            this.numDiametro.Visible = false;
+            // 
+            // labelDiametro
+            // 
+            this.labelDiametro.AutoSize = true;
+            this.labelDiametro.Location = new System.Drawing.Point(1011, 413);
+            this.labelDiametro.Name = "labelDiametro";
+            this.labelDiametro.Size = new System.Drawing.Size(49, 13);
+            this.labelDiametro.TabIndex = 53;
+            this.labelDiametro.Text = "Diametro";
+            this.labelDiametro.Visible = false;
+            // 
+            // txtposicion
+            // 
+            this.txtposicion.AutoSize = true;
+            this.txtposicion.Location = new System.Drawing.Point(818, 106);
+            this.txtposicion.Name = "txtposicion";
+            this.txtposicion.Size = new System.Drawing.Size(94, 13);
+            this.txtposicion.TabIndex = 55;
+            this.txtposicion.Text = "Posicion de Grapa";
+            this.txtposicion.Visible = false;
+            // 
+            // cbGrapa
+            // 
+            this.cbGrapa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGrapa.FormattingEnabled = true;
+            this.cbGrapa.Items.AddRange(new object[] {
+            "1",
+            "1.2",
+            "1.5"});
+            this.cbGrapa.Location = new System.Drawing.Point(821, 121);
+            this.cbGrapa.Margin = new System.Windows.Forms.Padding(2);
+            this.cbGrapa.Name = "cbGrapa";
+            this.cbGrapa.Size = new System.Drawing.Size(123, 21);
+            this.cbGrapa.TabIndex = 54;
+            this.cbGrapa.Visible = false;
+            // 
+            // numLM
+            // 
+            this.numLM.Location = new System.Drawing.Point(821, 121);
+            this.numLM.Name = "numLM";
+            this.numLM.Size = new System.Drawing.Size(120, 20);
+            this.numLM.TabIndex = 56;
+            this.numLM.Visible = false;
+            // 
+            // txtLM
+            // 
+            this.txtLM.AutoSize = true;
+            this.txtLM.Location = new System.Drawing.Point(818, 105);
+            this.txtLM.Name = "txtLM";
+            this.txtLM.Size = new System.Drawing.Size(22, 13);
+            this.txtLM.TabIndex = 57;
+            this.txtLM.Text = "LM";
+            this.txtLM.Visible = false;
+            // 
+            // numC
+            // 
+            this.numC.Location = new System.Drawing.Point(821, 121);
+            this.numC.Name = "numC";
+            this.numC.Size = new System.Drawing.Size(120, 20);
+            this.numC.TabIndex = 58;
+            this.numC.Visible = false;
+            // 
+            // txtC
+            // 
+            this.txtC.AutoSize = true;
+            this.txtC.Location = new System.Drawing.Point(818, 105);
+            this.txtC.Name = "txtC";
+            this.txtC.Size = new System.Drawing.Size(14, 13);
+            this.txtC.TabIndex = 59;
+            this.txtC.Text = "C";
+            this.txtC.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 678);
+            this.ClientSize = new System.Drawing.Size(1284, 701);
+            this.Controls.Add(this.numC);
+            this.Controls.Add(this.txtC);
+            this.Controls.Add(this.numLM);
+            this.Controls.Add(this.txtLM);
+            this.Controls.Add(this.txtposicion);
+            this.Controls.Add(this.cbGrapa);
+            this.Controls.Add(this.numDiametro);
+            this.Controls.Add(this.labelDiametro);
+            this.Controls.Add(this.numRec);
+            this.Controls.Add(this.labelRec);
+            this.Controls.Add(this.numH);
+            this.Controls.Add(this.labelH);
+            this.Controls.Add(this.numB);
+            this.Controls.Add(this.labelB);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupR);
             this.Controls.Add(this.GroupT);
@@ -666,6 +833,12 @@
             this.groupR.ResumeLayout(false);
             this.groupR.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRec)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiametro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -719,6 +892,20 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.NumericUpDown numB;
+        private System.Windows.Forms.Label labelB;
+        private System.Windows.Forms.NumericUpDown numH;
+        private System.Windows.Forms.Label labelH;
+        private System.Windows.Forms.NumericUpDown numRec;
+        private System.Windows.Forms.Label labelRec;
+        private System.Windows.Forms.NumericUpDown numDiametro;
+        private System.Windows.Forms.Label labelDiametro;
+        private System.Windows.Forms.Label txtposicion;
+        private System.Windows.Forms.ComboBox cbGrapa;
+        private System.Windows.Forms.NumericUpDown numLM;
+        private System.Windows.Forms.Label txtLM;
+        private System.Windows.Forms.NumericUpDown numC;
+        private System.Windows.Forms.Label txtC;
     }
 }
 

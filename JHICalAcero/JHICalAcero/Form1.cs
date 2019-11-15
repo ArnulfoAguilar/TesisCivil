@@ -36,6 +36,7 @@ namespace JHICalAcero
             cargarCBVarilla();
             cargarCBClave();
             cargarCBE();
+            CargarCBGrapa();
             DesactivarW();
             llenarGrid();
             }
@@ -58,6 +59,15 @@ namespace JHICalAcero
             cbElemento.DisplayMember = "Name";
             cbElemento.ValueMember = "Value";
             cbElemento.DataSource = lista;
+        }
+        public void CargarCBGrapa()
+        {
+            List<item> lista = new List<item>();
+            lista.Add(new item("Horizontal", 1));
+            lista.Add(new item("Vertical", 2));
+            cbGrapa.DisplayMember = "Name";
+            cbGrapa.ValueMember = "Value";
+            cbGrapa.DataSource = lista;
         }
         public void cargarCBFy()
         {
@@ -143,62 +153,163 @@ namespace JHICalAcero
                 case 1:
                     pictureBox1.Image = System.Drawing.Image.FromFile("Ganchos/AL90.png");
                     imagen = "Ganchos/AL90.png";
+                    desactivarCamposB();
+                    txtposicion.Hide();
+                    cbGrapa.Hide();
+                    txtC.Hide();
+                    numC.Hide();
                     break;
                 case 2:
                     pictureBox1.Image = System.Drawing.Image.FromFile("Ganchos/AL135.png");
                     imagen = "Ganchos/AL135.png";
+                    desactivarCamposB();
+                    txtposicion.Hide();
+                    cbGrapa.Hide();
+                    txtC.Hide();
+                    numC.Hide();
                     break;
                 case 3:
                     pictureBox1.Image = System.Drawing.Image.FromFile("Ganchos/AL180.png");
                     imagen = "Ganchos/AL180.png";
+                    desactivarCamposB();
+                    txtposicion.Hide();
+                    cbGrapa.Hide();
+                    txtC.Hide();
+                    numC.Hide();
                     break;
                 case 4:
                     pictureBox1.Image = System.Drawing.Image.FromFile("Ganchos/ALC90.png");
                     imagen = "Ganchos/ALC90.png";
+                    desactivarCamposB();
+                    txtposicion.Hide();
+                    cbGrapa.Hide();
+                    txtC.Hide();
+                    numC.Hide();
                     break;
                 case 5:
                     pictureBox1.Image = System.Drawing.Image.FromFile("Ganchos/ALC135.png");
                     imagen = "Ganchos/ALC135.png";
+                    desactivarCamposB();
+                    txtposicion.Hide();
+                    cbGrapa.Hide();
+                    txtC.Hide();
+                    numC.Hide();
                     break;
                 case 6:
                     pictureBox1.Image = System.Drawing.Image.FromFile("Ganchos/ALC180.png");
                     imagen = "Ganchos/ALC180.png";
+                    desactivarCamposB();
+                    txtposicion.Hide();
+                    cbGrapa.Hide();
+                    txtC.Hide();
+                    numC.Hide();
+                    txtLM.Show();
+                    numLM.Show();
                     break;
                 case 7:
                     pictureBox1.Image = System.Drawing.Image.FromFile("Ganchos/ALR.png");
                     imagen = "Ganchos/ALR.png";
+                    desactivarCamposB();
+                    txtposicion.Hide();
+                    cbGrapa.Hide();
+                    txtC.Hide();
+                    numC.Hide();
+                    txtLM.Hide();
+                    numLM.Hide();
                     break;
                 case 8:
                     pictureBox1.Image = System.Drawing.Image.FromFile("Ganchos/ALRC.png");
                     imagen = "Ganchos/ALRC.png";
+                    desactivarCamposB();
+                    txtposicion.Hide();
+                    cbGrapa.Hide();
+                    txtC.Show();
+                    numC.Show();
+                    txtLM.Hide();
+                    numLM.Hide();
                     break;
                 case 9:
                     pictureBox1.Image = System.Drawing.Image.FromFile("Ganchos/AT90.png");
                     imagen = "Ganchos/AT90.png";
+                    DesactivarW();
+                    activarCamposB();
+                    txtposicion.Hide();
+                    cbGrapa.Hide();
+                    txtC.Hide();
+                    numC.Hide();
+                    txtLM.Hide();
+                    numLM.Hide();
                     break;
                 case 10:
                     pictureBox1.Image = System.Drawing.Image.FromFile("Ganchos/AT135.png");
                     imagen = "Ganchos/AT135.png";
+                    DesactivarW();
+                    activarCamposB();
+                    txtposicion.Hide();
+                    cbGrapa.Hide();
+                    txtC.Hide();
+                    numC.Hide();
+                    txtLM.Hide();
+                    numLM.Hide();
                     break;
                 case 11:
                     pictureBox1.Image = System.Drawing.Image.FromFile("Ganchos/AT180.png");
                     imagen = "Ganchos/AT180.png";
+                    DesactivarW();
+                    activarCamposB();
+                    txtposicion.Hide();
+                    cbGrapa.Hide();
+                    txtC.Hide();
+                    numC.Hide();
+                    txtLM.Hide();
+                    numLM.Hide();
                     break;
                 case 12:
                     pictureBox1.Image = System.Drawing.Image.FromFile("Ganchos/ATC135.png");
                     imagen = "Ganchos/ATC135.png";
+                    DesactivarW();
+                    activarCamposB();
+                    txtposicion.Hide();
+                    cbGrapa.Hide();
+                    txtC.Hide();
+                    numC.Hide();
+                    txtLM.Hide();
+                    numLM.Hide();
                     break;
                 case 13:
                     pictureBox1.Image = System.Drawing.Image.FromFile("Ganchos/DBE135.png");
                     imagen = "Ganchos/DBE135.png";
+                    DesactivarW();
+                    activarCamposB();
+                    txtposicion.Hide();
+                    cbGrapa.Hide();
+                    txtC.Hide();
+                    numC.Hide();
+                    txtLM.Hide();
+                    numLM.Hide();
                     break;
                 case 14:
                     pictureBox1.Image = System.Drawing.Image.FromFile("Ganchos/GRAPA.png");
                     imagen = "Ganchos/GRAPA.png";
+                    DesactivarW();
+                    activarCamposB();
+                    txtposicion.Show();
+                    cbGrapa.Show();
+                    txtC.Hide();
+                    numC.Hide();
+                    txtLM.Hide();
+                    numLM.Hide();
                     break;
                 case 15:
                     pictureBox1.Image = System.Drawing.Image.FromFile("Ganchos/VGD90.png");
                     imagen = "Ganchos/VGD90.png";
+                    desactivarCamposB();
+                    txtposicion.Hide();
+                    cbGrapa.Hide();
+                    txtC.Hide();
+                    numC.Hide();
+                    txtLM.Show();
+                    numLM.Show();
                     break;
                 default:
                     MessageBox.Show("No existe esta clave");
@@ -245,8 +356,6 @@ namespace JHICalAcero
                     MessageBox.Show("No existe este tipo de varilla");
                     break;
             }
-
-
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -260,13 +369,21 @@ namespace JHICalAcero
                     connection.Open();
                     SQLiteParameter param = new SQLiteParameter();
                     string queryString;
-                    if (Solicitacion=="Tension")
+                    if (imagen == "Ganchos/AT90.png" || imagen == "Ganchos/AT135.png" || imagen == "Ganchos/AT180.png" || imagen == "Ganchos/ATC135.png" || imagen == "Ganchos/DBE135.png" )
                     {
-                        queryString = queryTension();
+                        queryString = queryCamposNuevosB();
+                    }
+                    else if (imagen == "Ganchos/GRAPA.png")
+                    {
+                        queryString = queryGRAPA();
+                    }
+                    else if (Solicitacion == "Compresion")
+                    {
+                        queryString = querySinW();
                     }
                     else
                     {
-                        queryString = queryCompresion();
+                        queryString = querySinR();
                     }
                     
 
@@ -287,9 +404,120 @@ namespace JHICalAcero
 
            
         }
-        private string queryTension()
+        private string queryCamposNuevosB()
         {
             string queryString = "INSERT INTO elemento(ProyectoID,elemento, fy,fc,varilla,diametro,clave" +
+                                        ",solicitacion,lecho,cantidad,lambda,lrect,imagen,r,b,diametro2,rec,h) " +
+                                         "VALUES(" +
+                                         Int32.Parse(VariablesGlobales.IDPROYECTO) +
+                                         ",'" + cbElemento.SelectedItem.ToString() + "'" +  //elemento
+                                         ",'" + cbFy.SelectedItem.ToString() + "'" + //fy
+                                         ",'" + cbFc.SelectedItem.ToString() + "'" +  //fc
+                                         ",'" + cbVarilla.SelectedItem.ToString() + "'" + //varilla
+                                         ",'" + txtDiametro.Text.ToString() + "'" +  //diametro
+                                         ",'" + cbClave.SelectedItem.ToString() + "'" + //clave
+                                         ",'" + Solicitacion.ToString() + "'" +  //solicitacion
+                                         ",'" + lecho.ToString() + "'" +  //lecho
+                                         ",'" + numCantidad.Value.ToString() + "'" +  //Cantidad
+                                         ",'" + lambda + "'" +  //lambda
+                                         ",'" + numLRECT.Value.ToString() + "'" +  //LRECT
+                                         ",'" + imagen.ToString() + "'" +  //Imagen
+                                         ",'" + R + "'" +  //WR
+                                         ",'" + numB.Value.ToString() + "'" +  //Nuevo Campos B
+                                         ",'" + numDiametro.Value.ToString() + "'" +  //Nuevo Campo Diametro
+                                         ",'" + numRec.Value.ToString() + "'" +  //Nuevo Campo rec
+                                         ",'" + numH.Value.ToString() + "'" +  //Nuevo campo H
+                                         "); ";
+            return queryString;
+        }
+        private string queryGRAPA()
+        {
+            string queryString = "INSERT INTO elemento(ProyectoID,elemento, fy,fc,varilla,diametro,clave" +
+                                        ",solicitacion,lecho,cantidad,lambda,lrect,imagen,r,b,diametro2,rec,h,GrapaHorizontal) " +
+                                         "VALUES(" +
+                                         Int32.Parse(VariablesGlobales.IDPROYECTO) +
+                                         ",'" + cbElemento.SelectedItem.ToString() + "'" +  //elemento
+                                         ",'" + cbFy.SelectedItem.ToString() + "'" + //fy
+                                         ",'" + cbFc.SelectedItem.ToString() + "'" +  //fc
+                                         ",'" + cbVarilla.SelectedItem.ToString() + "'" + //varilla
+                                         ",'" + txtDiametro.Text.ToString() + "'" +  //diametro
+                                         ",'" + cbClave.SelectedItem.ToString() + "'" + //clave
+                                         ",'" + Solicitacion.ToString() + "'" +  //solicitacion
+                                         ",'" + lecho.ToString() + "'" +  //lecho
+                                         ",'" + numCantidad.Value.ToString() + "'" +  //Cantidad
+                                         ",'" + lambda + "'" +  //lambda
+                                         ",'" + numLRECT.Value.ToString() + "'" +  //LRECT
+                                         ",'" + imagen.ToString() + "'" +  //Imagen
+                                         ",'" + R + "'" +  //WR
+                                         ",'" + numB.Value.ToString() + "'" +  //Nuevo Campos B
+                                         ",'" + numDiametro.Value.ToString() + "'" +  //Nuevo Campo Diametro
+                                         ",'" + numRec.Value.ToString() + "'" +  //Nuevo Campo rec
+                                         ",'" + numH.Value.ToString() + "'" +  //Nuevo campo H
+                                         ",'" + cbGrapa.SelectedItem.ToString() + "'" +  //Nuevo campo H
+                                         "); ";
+            return queryString;
+        }
+        private string querySinR()
+        {
+            string queryString;
+            if (imagen == "Ganchos/ALC90.png"|| imagen == "Ganchos/ALC135.png" || imagen == "Ganchos/ALC180.png" || imagen == "Ganchos/VGD90.png" )
+            {
+                 queryString = "INSERT INTO elemento(ProyectoID,elemento, fy,fc,varilla,diametro,clave" +
+                                        ",solicitacion,lecho,cantidad,cb,ktr,lambda,e,s,t,lrect,imagen,Lm) " +
+                                         "VALUES(" +
+                                         Int32.Parse(VariablesGlobales.IDPROYECTO) +
+                                         ",'" + cbElemento.SelectedItem.ToString() + "'" +  //elemento
+                                         ",'" + cbFy.SelectedItem.ToString() + "'" + //fy
+                                         ",'" + cbFc.SelectedItem.ToString() + "'" +  //fc
+                                         ",'" + cbVarilla.SelectedItem.ToString() + "'" + //varilla
+                                         ",'" + txtDiametro.Text.ToString() + "'" +  //diametro
+                                         ",'" + cbClave.SelectedItem.ToString() + "'" + //clave
+                                         ",'" + Solicitacion.ToString() + "'" +  //solicitacion
+                                         ",'" + lecho.ToString() + "'" +  //lecho
+                                         ",'" + numCantidad.Value.ToString() + "'" +  //Cantidad
+                                         ",'" + numCb.Value.ToString() + "'" +  //CB
+                                         ",'" + numKTR.Value.ToString() + "'" +  //KTR
+                                         ",'" + lambda + "'" +  //lambda
+                                         ",'" + cbe.SelectedItem.ToString() + "'" +  //E
+                                         ",'" + S + "'" + //S
+                                         ",'" + T + "'" + //T
+                                         ",'" + numLRECT.Value.ToString() + "'" +  //LRECT
+                                         ",'" + imagen.ToString() + "'" +  //Imagen
+                                         ",'" + numLM.Value.ToString() + "'" +  //Imagen
+                                         "); ";
+                
+            }else if (imagen == "Ganchos/ALRC.png")
+            {
+                
+                    queryString = "INSERT INTO elemento(ProyectoID,elemento, fy,fc,varilla,diametro,clave" +
+                                           ",solicitacion,lecho,cantidad,cb,ktr,lambda,e,s,t,lrect,imagen,C) " +
+                                            "VALUES(" +
+                                            Int32.Parse(VariablesGlobales.IDPROYECTO) +
+                                            ",'" + cbElemento.SelectedItem.ToString() + "'" +  //elemento
+                                            ",'" + cbFy.SelectedItem.ToString() + "'" + //fy
+                                            ",'" + cbFc.SelectedItem.ToString() + "'" +  //fc
+                                            ",'" + cbVarilla.SelectedItem.ToString() + "'" + //varilla
+                                            ",'" + txtDiametro.Text.ToString() + "'" +  //diametro
+                                            ",'" + cbClave.SelectedItem.ToString() + "'" + //clave
+                                            ",'" + Solicitacion.ToString() + "'" +  //solicitacion
+                                            ",'" + lecho.ToString() + "'" +  //lecho
+                                            ",'" + numCantidad.Value.ToString() + "'" +  //Cantidad
+                                            ",'" + numCb.Value.ToString() + "'" +  //CB
+                                            ",'" + numKTR.Value.ToString() + "'" +  //KTR
+                                            ",'" + lambda + "'" +  //lambda
+                                            ",'" + cbe.SelectedItem.ToString() + "'" +  //E
+                                            ",'" + S + "'" + //S
+                                            ",'" + T + "'" + //T
+                                            ",'" + numLRECT.Value.ToString() + "'" +  //LRECT
+                                            ",'" + imagen.ToString() + "'" +  //Imagen
+                                            ",'" + numC.Value.ToString() + "'" +  //Imagen
+                                            "); ";
+
+                
+            }
+            else
+            {
+                queryString = "INSERT INTO elemento(ProyectoID,elemento, fy,fc,varilla,diametro,clave" +
                                         ",solicitacion,lecho,cantidad,cb,ktr,lambda,e,s,t,lrect,imagen) " +
                                          "VALUES(" +
                                          Int32.Parse(VariablesGlobales.IDPROYECTO) +
@@ -310,12 +538,62 @@ namespace JHICalAcero
                                          ",'" + T + "'" + //T
                                          ",'" + numLRECT.Value.ToString() + "'" +  //LRECT
                                          ",'" + imagen.ToString() + "'" +  //Imagen
+                                         ",'" + numLM.Value.ToString() + "'" +  //Imagen
                                          "); ";
+            }
+             
             return queryString;
         }
-        private string queryCompresion()
+        private string querySinW()
         {
-            string queryString = "INSERT INTO elemento(ProyectoID,elemento, fy,fc,varilla,diametro,clave" +
+            string queryString;
+            if (imagen == "Ganchos/ALC90.png" || imagen == "Ganchos/ALC135.png" || imagen == "Ganchos/ALC180.png" || imagen == "Ganchos/VGD90.png")
+            {
+                queryString = "INSERT INTO elemento(ProyectoID,elemento, fy,fc,varilla,diametro,clave" +
+                                           ",solicitacion,lecho,cantidad,lambda,lrect,imagen,r,Lm) " +
+                                            "VALUES(" +
+                                            Int32.Parse(VariablesGlobales.IDPROYECTO) +
+                                            ",'" + cbElemento.SelectedItem.ToString() + "'" +  //elemento
+                                            ",'" + cbFy.SelectedItem.ToString() + "'" + //fy
+                                            ",'" + cbFc.SelectedItem.ToString() + "'" +  //fc
+                                            ",'" + cbVarilla.SelectedItem.ToString() + "'" + //varilla
+                                            ",'" + txtDiametro.Text.ToString() + "'" +  //diametro
+                                            ",'" + cbClave.SelectedItem.ToString() + "'" + //clave
+                                            ",'" + Solicitacion.ToString() + "'" +  //solicitacion
+                                            ",'" + lecho.ToString() + "'" +  //lecho
+                                            ",'" + numCantidad.Value.ToString() + "'" +  //Cantidad
+                                            ",'" + lambda + "'" +  //lambda
+                                            ",'" + numLRECT.Value.ToString() + "'" +  //LRECT
+                                            ",'" + imagen.ToString() + "'" +  //Imagen
+                                            ",'" + R + "'" +  //WR
+                                            ",'" + numLM.Value.ToString() + "'" +  //LM
+                                            "); ";
+            }
+            else if (imagen == "Ganchos/ALRC.png")
+            {
+                queryString = "INSERT INTO elemento(ProyectoID,elemento, fy,fc,varilla,diametro,clave" +
+                                           ",solicitacion,lecho,cantidad,lambda,lrect,imagen,r,C) " +
+                                            "VALUES(" +
+                                            Int32.Parse(VariablesGlobales.IDPROYECTO) +
+                                            ",'" + cbElemento.SelectedItem.ToString() + "'" +  //elemento
+                                            ",'" + cbFy.SelectedItem.ToString() + "'" + //fy
+                                            ",'" + cbFc.SelectedItem.ToString() + "'" +  //fc
+                                            ",'" + cbVarilla.SelectedItem.ToString() + "'" + //varilla
+                                            ",'" + txtDiametro.Text.ToString() + "'" +  //diametro
+                                            ",'" + cbClave.SelectedItem.ToString() + "'" + //clave
+                                            ",'" + Solicitacion.ToString() + "'" +  //solicitacion
+                                            ",'" + lecho.ToString() + "'" +  //lecho
+                                            ",'" + numCantidad.Value.ToString() + "'" +  //Cantidad
+                                            ",'" + lambda + "'" +  //lambda
+                                            ",'" + numLRECT.Value.ToString() + "'" +  //LRECT
+                                            ",'" + imagen.ToString() + "'" +  //Imagen
+                                            ",'" + R + "'" +  //WR
+                                            ",'" + numC.Value.ToString() + "'" +  //C
+                                            "); ";
+            }
+            else
+            {
+                queryString = "INSERT INTO elemento(ProyectoID,elemento, fy,fc,varilla,diametro,clave" +
                                         ",solicitacion,lecho,cantidad,lambda,lrect,imagen,r) " +
                                          "VALUES(" +
                                          Int32.Parse(VariablesGlobales.IDPROYECTO) +
@@ -333,6 +611,8 @@ namespace JHICalAcero
                                          ",'" + imagen.ToString() + "'" +  //Imagen
                                          ",'" + R + "'" +  //WR
                                          "); ";
+            }
+                 
             return queryString;
         }
         private  void llenarGrid()
@@ -457,7 +737,28 @@ namespace JHICalAcero
             numKTR.Hide();
             txtKtr.Hide();
         }
-
+        private void activarCamposB()
+        {
+            labelB.Show();
+            labelDiametro.Show();
+            labelRec.Show();
+            labelH.Show();
+            numDiametro.Show();
+            numH.Show();
+            numRec.Show();
+            numB.Show();
+        }
+        private void desactivarCamposB()
+        {
+            labelB.Hide();
+            labelDiametro.Hide();
+            labelRec.Hide();
+            labelH.Hide();
+            numDiametro.Hide();
+            numH.Hide();
+            numRec.Hide();
+            numB.Hide();
+        }
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             VariablesGlobales.IDELEMENTO = dataGridView1.Rows[e.RowIndex].Cells["ElementoID"].Value.ToString();
